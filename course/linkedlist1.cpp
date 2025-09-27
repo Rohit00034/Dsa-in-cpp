@@ -1,3 +1,5 @@
+/*LEARNT ABOUT LINKED LIST AND IMPLEMENTED IT , CREATED FUNCTIONS FOR TRAVERSING,PRINTING 
+AND INSERTING A NODE AT THE END OF THE LINKED LIST*/
 #include <iostream>
 using namespace std;
 /*A linked list has various nodes in it which are linked to together to form a data 

@@ -13,32 +13,62 @@ Node* NextAdd;
 //function to traverse and print all the data of linked list
 void printlnkdlst(Node* start){
     Node* temp=start;
-    while(temp->NextAdd!=nullptr){
-    temp=temp->NextAdd;
+    while(1){
     cout<<temp->data<<endl;
+    temp=temp->NextAdd;
+if(temp->NextAdd==nullptr){
+    cout<<temp->data<<endl;
+  break;
+}}
+/*delete temp;
+NOTE:NEVER DO THIS , IF YOU MAKE A POINTER WHICH STORES THE ADDRESS TO A NODE AND THEN
+MAKE ANOTHER POINTER WHICH POINTS TO THE SAME LOCATION ,AND LATER IF YOU DELETE THE 2ND 
+POINTER(AS DONE ABOVE) IT WILL ALSO DELETE THE NODE ITSELF FROM THE MEMORY */ 
 }
+//function to only traverse the linked list
+Node* traverse(Node* start){
+   Node* temp=start;
+   while(temp->NextAdd!=nullptr){
+    temp=temp->NextAdd;
+   }
+   return temp;
 }
+//function to insert node at the end of the linked list
+void insertend(Node* start){
+cout<<"Creating a node!\n";
+Node* ptrToNewNode=new Node;
+int data;
+cout<<"Enter the data of node :";
+cin>>data;
+ptrToNewNode->data=data;
+ptrToNewNode->NextAdd=nullptr;
+traverse(start)->NextAdd=ptrToNewNode;
+
+}
+
 int main(){
     Node* Aptr;
     // Aptr=NULL; this indicates list is empty
     //creating a node
     Node*Node1=new Node; //can also write Node*Node1=new Node(); here Node() may represent a constructor
     //now Aptr will point to the Node1
-    Aptr->NextAdd=Node1;
+    Aptr=Node1;
     //assigning a value in the the Node1
     (*Node1).data=1;
      // Node1->NextAdd=NULL;//i can also equate it to a nullpointer(nullptr) 
     Node* Node2=new Node; //creating 2nd node
-    Node1->NextAdd=Node2; //conneted node1 to node2
+    Node1->NextAdd=Node2; //connected node1 to node2
     Node2->data=2;//assigning a value in the 2nd node
     // Node2->NextAdd=nullptr;
     Node* Node3=new Node;//creating 3rd node
-    Node2->NextAdd=Node3;//conneted node2 to node3
+    Node2->NextAdd=Node3;//connected node2 to node3
     Node3->data=3;
     Node3->NextAdd=nullptr;
     //CURRENT LINKED LIST STRUCTURE
     // Aptr------------>Node1---------->Node2------->Node3
     //NULL|&Node1    [1]|&Node2     [2]|&Node3   [3]|nullptr(NULL)
+    printlnkdlst(Aptr);
+    insertend(Aptr);
     printlnkdlst(Aptr);
     return 0;
 }

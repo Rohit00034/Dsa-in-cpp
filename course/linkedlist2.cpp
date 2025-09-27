@@ -42,3 +42,11 @@ int main(){
 
     return 0;
 }
+/*If the head variable was not a global if declared inside the main function,instead of 
+creating temp pointer again and again and using memory what we can do is we can pass the 
+copy of the head variable to the functions */
+/*So there are 3 ways 
+1)using the global head variable in fucntions with temp pointer
+2)passing the head pointer as a parameter in funciton and using tmep pointer
+3)declaring the head in main() and passing its copy to the fucntion and using it as a temp 
+pointer*/

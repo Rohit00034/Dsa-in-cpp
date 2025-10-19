@@ -6,7 +6,9 @@ using namespace std;
 structure ,A node is divided in 2 parts 1st part has data and 2nd has the address to the
 next node.the first node of the linked list is called the head node and the last node in 
 the linked list is called tail and points to NULL .We use pointer to store the location
-of the head node(start of linked list),it points to Null if linked list is empty*/
+of the head node(start of linked list),it points to Null if linked list is empty
+NOTE:An uninitialized pointer holds an indeterminate (garbage) value, not 0 or NULL. 
+Attempting to use it (like dereferencing it) is undefined behavior.*/
 //we can also use template to make a linked list store any type of data
 struct Node{
 int data;

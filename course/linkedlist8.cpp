@@ -37,7 +37,7 @@ void ReverseTheList(Node* h1){
         return;
     }
     ReverseTheList(h1->NextAdd);
-    Node* h2=h1->NextAdd;
+    Node* h2=h1->NextAdd; //WE CAN ELIMINATE THIS LINES BY REPLACING THEM WITH H1->NEXTADD->NEXTADD=H1
     h2->NextAdd=h1;
     h1->NextAdd=nullptr;
 }

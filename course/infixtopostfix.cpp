@@ -42,7 +42,70 @@ while(!s.empty()){
     }
 return postfix;
 }
+//BELOW IS FOR CORRECT STRING WITH PARENTHESIS
+bool IsOpeningParenthesis(char a){
+    if(a=='('|a=='['|a=='{'){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+bool IsClosingParenthesis(char a){
+    if(a==')'|a==']'|a=='}'){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+string infixtopostfixwithparenthesis(string exp){
+    string postfix;
+    stack<char> s;
+    for(int i=0;i<exp.length();i++){
+    if(exp[i]=='*'|exp[i]=='+'|exp[i]=='-'|exp[i]=='/'){
+        if(s.empty()| IsOpeningParenthesis(s.top())){
+            s.push(exp[i]);
+        }
+        else if(CheckHigherPriority(exp[i],s.top())){
+            s.push(exp[i]);
+        }
+        else if(!CheckHigherPriority(exp[i],s.top())){
+            while(!s.empty() && !IsOpeningParenthesis(s.top()) && !CheckHigherPriority(exp[i],s.top()) ){
+            postfix.append(string(1,s.top()));
+            s.pop();
+            }
+            s.push(exp[i]);
+        }
+
+        
+
+    }
+    else if(IsOpeningParenthesis(exp[i])){
+              s.push(exp[i]);
+    }
+    else if(IsClosingParenthesis(exp[i])){
+        while(!IsOpeningParenthesis(s.top())){
+            postfix.append(string(1,s.top()));
+            s.pop();
+        }
+        s.pop();
+    }
+
+    else{ //is operand
+        postfix.append(string(1,exp[i]));
+    }
+    }
+    while(!s.empty()){
+        postfix.append(string(1,s.top()));
+        s.pop();
+    }
+  return postfix;
+}
 int main(){
-    cout<<infixtopostfix("A+B*C-D*E-D");
+    cout<<infixtopostfix("A+B*C-D*E-D")<<endl;
+    cout<<infixtopostfixwithparenthesis("(A+B/C*(D+E)-F)");
     return 0;
 }

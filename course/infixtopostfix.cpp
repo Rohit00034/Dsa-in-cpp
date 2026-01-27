@@ -105,7 +105,7 @@ string infixtopostfixwithparenthesis(string exp){
   return postfix;
 }
 int main(){
-    cout<<infixtopostfix("A+B*C-D*E-D")<<endl;
-    cout<<infixtopostfixwithparenthesis("(A+B/C*(D+E)-F)");
-    return 0;
+    cout<<infixtopostfix("A+B*C-D*E-D")<<endl; //OUTPUT ABC*+DE*-D-
+    cout<<infixtopostfixwithparenthesis("(A+B/C*(D+E)-F)"); //OUTPUT ABC/DE+*+F-
+    return 0; 
 }

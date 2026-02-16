@@ -1,5 +1,4 @@
-/*Implemented binary search tree without recursion using loops NOTE:WHILE REVISING DO CHECK THE VIDEO AGAIN OR DRAW THE 
-RECURSION TREE*/
+/*Implemented binary search tree without recursion using loops */
 #include <iostream>
 using namespace std;
 class BST;

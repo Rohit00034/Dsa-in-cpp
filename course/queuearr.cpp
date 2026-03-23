@@ -1,5 +1,5 @@
 /*Learnt about queue and it's implementation(check notes for more info) ,the queue can be implemented in 2 ways 
-1)array 2)queue
+1)array 2)linked list
 We implemented queue here using array. 
 here the index incrementation is done only using (n+1)%N where n is the one to be incremented and num is the lenght of array.
 and here the array is a circular array rather than a linear normal one check notes for idea*/

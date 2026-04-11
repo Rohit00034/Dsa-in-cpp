@@ -29,7 +29,7 @@ class Node{
         leftAdd=nullptr;
         rightAdd=nullptr;
     }
-    template <class U>
+    template <class U>//this ensures that whatever type class BT has friend them all
     friend class BT;
 };
 template <class T>
@@ -126,7 +126,7 @@ void DFSPostOrder(Node<T>* root){ //LRD(,LEFT, RIGHT,DATA)/LRV( LEFT  RIGHT VISI
 int main(){
     BT<char> bt1;
     Node<char>* root=nullptr;
-
+  //here this is a bst so the elemets are inserted according to their ASCII value of chars
    root=bt1.InsertNewNode(root,'F');
    root=bt1.InsertNewNode(root,'D');
    root=bt1.InsertNewNode(root,'J');

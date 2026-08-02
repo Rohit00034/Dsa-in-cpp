@@ -59,6 +59,7 @@ public:
 
 EXPLANATION:-
 This is one of the cleverest tricks in array problems. The idea is to **store two numbers in one array element**.
+IMPORTANT:- This works because every original element is guaranteed to be in the range **0 to n−1**, so `old < n`. That means `old` becomes the remainder (`% n`), while `new` is stored in the higher multiples of `n` and can be recovered with integer division (`/ n`).
 
 Let's go through it step by step.
 
@@ -457,5 +458,4 @@ stored = 33
 33 / 6 = 5   ← new value
 ```
 
-This works because every original element is guaranteed to be in the range **0 to n−1**, so `old < n`. That means `old` becomes the remainder (`% n`), while `new` is stored in the higher multiples of `n` and can be recovered with integer division (`/ n`).
 */
